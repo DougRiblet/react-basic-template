@@ -2,14 +2,25 @@
   "name": "react-basic",
   "version": "1.0.0",
   "description": "basic React app",
+  "author": "Doug Riblet <dougriblet98@gmail.com>",
   "main": "client/index.jsx",
   "scripts": {
     "test": "jest",
     "start": "nodemon server/server.cjs",
-    "lint": "eslint --ext .jsx,.cjs client server",
+    "lint": "eslint --ext .jsx,.cjs,.js client server",
+    "sass": "sass client/sass/style.scss client/dist/style.css",
     "build": "webpack --config webpack.config.cjs"
   },
-  "author": "Doug Riblet <dougriblet98@gmail.com>",
+  "jest": {
+    "clearMocks": true,
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testEnvironment": "jsdom",
+    "verbose": true
+  },
   "license": "ISC",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
